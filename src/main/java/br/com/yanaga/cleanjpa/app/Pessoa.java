@@ -15,4 +15,31 @@ public class Pessoa implements Serializable {
 	@GeneratedValue
 	private Long id;
 
+	Integer version;
+
+	private Tipo tipo = Tipo.FISICA;
+
+	Pessoa() {
+	}
+
+	public static Pessoa newInstance() {
+		return new Pessoa();
+	}
+
+	public int getNumeroParcelas() {
+		return tipo.getNumeroParcelas();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
 }
